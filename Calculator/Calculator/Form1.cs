@@ -12,6 +12,7 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        double result;
         string sign;
         double val1;
         double val2;
@@ -34,12 +35,13 @@ namespace Calculator
         private void button15_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
+             result = 0;
+            label1.Text = "";
         }
 
         private void button16_Click_1(object sender, EventArgs e)
         {
             val2 = double.Parse(textBox1.Text);
-            double result;
             if (sign == "+")
             {
                 result = val1 + val2;
@@ -175,6 +177,11 @@ namespace Calculator
         private void button_cl_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
         }
     }
 }

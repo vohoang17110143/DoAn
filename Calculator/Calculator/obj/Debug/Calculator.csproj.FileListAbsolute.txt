@@ -7,3 +7,6 @@ D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.exe
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\obj\Debug\Calculator.pdb

@@ -147,6 +147,7 @@
             this.button14.TabIndex = 6;
             this.button14.Text = "C";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -220,7 +221,7 @@
             this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button0.Location = new System.Drawing.Point(16, 169);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(159, 34);
+            this.button0.Size = new System.Drawing.Size(159, 43);
             this.button0.TabIndex = 22;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
