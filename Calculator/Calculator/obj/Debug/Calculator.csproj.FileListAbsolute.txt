@@ -7,6 +7,22 @@ D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.exe
 D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Bài tập\Calculator\Calculator\obj\Debug\Calculator.pdb
-C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\bin\Debug\Calculator.exe.config
-C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\obj\Debug\Calculator.exe
-C:\Users\DELL\Documents\GitHub\DoAn\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Năm 2\HK1\Cấu trúc giữ liệu và giải thuật\Đồ án\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+D:\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+D:\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+D:\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+D:\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Calculator\Calculator\obj\Debug\Calculator.pdb
