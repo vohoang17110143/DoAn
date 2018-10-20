@@ -14,10 +14,10 @@ namespace Calculator
     public partial class Form1 : Form
     {
         double result;
-        string sign;
-        double val1;
-        double val2;
-        int trackkeypoint = 0;
+        //string sign;
+        //double val1;
+        //double val2;
+        //int trackkeypoint = 0;
       
         public Form1()
         {
@@ -28,6 +28,8 @@ namespace Calculator
         bool NhapLai;
         void ThemKiTu(string c)
         {
+            if ((textBox1.Text == "0"))
+                textBox1.Clear();
             if (NhapLai)
             {
                 textBox1.Text = "";
@@ -57,7 +59,8 @@ namespace Calculator
 
         public static int GetPriority(string op)
         {
-            
+            if (op == "sin" || op == "cos" || op == "tan" || op == "cotg" || op == "ln" || op == "log" || op == "sqrt")
+                return 3;
             if (op == "*" || op == "/" || op == "%" )
                 return 2;
             if (op == "+" || op == "-")
@@ -75,6 +78,15 @@ namespace Calculator
 
             while (i < textBox1.Text.Length - 1)
             {
+                //nạp sin,cos,tan,cotg,ln,log vào toán tử st
+                if(textBox1.Text[i]>='a' && textBox1.Text[i]<='z')
+                {
+                    j = i;
+                    while (textBox1.Text[i] >= 'a' && textBox1.Text[i] <= 'z')
+                        i++;
+                    string str = textBox1.Text.Substring(j, i - j);
+                    st.Push((str.ToString()));
+                }
 
                 //nạp toán hạng vào sh
                 if (textBox1.Text[i] >= '0' && textBox1.Text[i] <= '9')
@@ -138,6 +150,37 @@ namespace Calculator
                                     break;
                             }
                             sh.Push(ketQua);
+                        }
+
+                        //Nếu là sin,cos,tan,cotg,ln,log
+
+                        else
+                            if( str1=="sin" || str1=="cos" || str1=="tan" || str1=="cotg" || str1=="ln" ||str1=="log" ||str1=="sqrt")
+                        {
+                            switch(str1)
+                            {
+                                case "sin":
+                                    sh.Push(Math.Sin(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "scos":
+                                    sh.Push(Math.Cos(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "tan":
+                                    sh.Push(Math.Tan(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "cotg":
+                                    sh.Push(1/Math.Tan(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "ln":
+                                    sh.Push(Math.Log10(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "log":
+                                    sh.Push(Math.Log(double.Parse(sh.Pop().ToString())));
+                                    break;
+                                case "sqrt":
+                                    sh.Push(Math.Sqrt(double.Parse(sh.Pop().ToString())));
+                                    break;
+                            }
                         }
                     }
                 
@@ -372,75 +415,79 @@ namespace Calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("1");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("3");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("4");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("5");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("6");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("7");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
             ThemKiTu("8");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
-            ThemKiTu("1");
+            //if ((textBox1.Text == "0"))
+            //    textBox1.Clear();
+            ThemKiTu("9");
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            if ((textBox1.Text == "0"))
+                textBox1.Clear();
             textBox1.Text += '-';
             NhapLai = false;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            if ((textBox1.Text == "0"))
+                textBox1.Clear();
             textBox1.Text += '+';
             NhapLai = false;
         }
@@ -469,8 +516,9 @@ namespace Calculator
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text += '%';
-            NhapLai = false;
+            //textBox1.Text += '%';
+            //NhapLai = false;
+            ThemKiTu("%");
         }
         private void button_cl_Click(object sender, EventArgs e)
         {
@@ -484,16 +532,12 @@ namespace Calculator
 
         private void button_MoNg_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
-            textBox1.Text = textBox1.Text + button_MoNg.Text;
+            ThemKiTu("(");
         }
 
         private void button_DongNG_Click(object sender, EventArgs e)
         {
-            if ((textBox1.Text == "0"))
-                textBox1.Clear();
-            textBox1.Text = textBox1.Text + button_DongNG.Text;
+            ThemKiTu(")");
         }
 
         private void buttom_Cham_Click(object sender, EventArgs e)
@@ -506,6 +550,44 @@ namespace Calculator
 
         }
 
-      
+        private void button19_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("sin");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("cos");
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("tan");
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("cotg");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("sqrt");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("log");
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            ThemKiTu("ln");
+        }
     }
 }
