@@ -14,10 +14,7 @@ namespace Calculator
     public partial class Form1 : Form
     {
         double result;
-        //string sign;
-        //double val1;
-        //double val2;
-        //int trackkeypoint = 0;
+       
       
         public Form1()
         {
@@ -92,9 +89,9 @@ namespace Calculator
                 if (textBox1.Text[i] >= '0' && textBox1.Text[i] <= '9')
                 {
                     j = i;
-                    //if (manhinh.Text[i + 1] == '(')
-                    //    st.Push("*"); 
-                    while (textBox1.Text[i + 1] >= '0' && textBox1.Text[i + 1] <= '9' || textBox1.Text[i + 1] == '.' && textBox1.Text[i + 1] != ' ' && i + 1 < textBox1.Text.Length)
+         
+                    while (textBox1.Text[i + 1] >= '0' && textBox1.Text[i + 1] <= '9' 
+                        || textBox1.Text[i + 1] == '.' && textBox1.Text[i + 1] != ' ' && i + 1 < textBox1.Text.Length)
                         i++;
                     string str = textBox1.Text.Substring(j, i + 1 - j);
                     sh.Push((str.ToString()));
@@ -109,14 +106,14 @@ namespace Calculator
                 }
 
                 //nạp toán tử vào st
-                if (textBox1.Text[i] == '+' || textBox1.Text[i] == '-' || textBox1.Text[i] == '*' || textBox1.Text[i] == '/' || textBox1.Text[i] == '%' || textBox1.Text[i] == '^')
+                if (textBox1.Text[i] == '+' || textBox1.Text[i] == '-' || textBox1.Text[i] == '*' || textBox1.Text[i] == '/' || textBox1.Text[i] == '%')
                 {
                     while (st.Count > 0 && GetPriority(textBox1.Text[i].ToString()) <= GetPriority(st.Peek().ToString()))
                     {
                         str1 = st.Pop().ToString();
 
                         //nếu là các phép tính
-                        if (str1 == "+" || str1 == "-" || str1 == "*" || str1 == "/" || str1 == "%" || str1 == "^")
+                        if (str1 == "+" || str1 == "-" || str1 == "*" || str1 == "/" || str1 == "%")
                         {
                             a = double.Parse((sh.Pop().ToString()));
                             b = double.Parse((sh.Pop().ToString()));
@@ -145,10 +142,7 @@ namespace Calculator
                                     }
                                     ketQua = (b % a);
                                     break;
-                                case "^":
-                                    ketQua = Math.Pow(b, a);
-                                    break;
-                            }
+                            }                            
                             sh.Push(ketQua);
                         }
 
@@ -257,10 +251,7 @@ namespace Calculator
                                 }
                                 ketQua = (b % a);
                                 break;
-                            case "^":
-                                ketQua = Math.Pow(b, a);
-                                break;
-                        }
+                        }                        
                         sh.Push(ketQua);
                         if (str1 != "(")
                             str1 = st.Pop().ToString();
@@ -287,7 +278,7 @@ namespace Calculator
                     return;
                 }
 
-                if (str1 == "+" || str1 == "-" || str1 == "*" || str1 == "/" || str1 == "%" || str1 == "^")
+                if (str1 == "+" || str1 == "-" || str1 == "*" || str1 == "/" || str1 == "%" )
                 {
                     b = double.Parse((sh.Pop().ToString()));
                     switch (str1)
@@ -314,9 +305,6 @@ namespace Calculator
                                 MessageBox.Show("Không thể chia cho 0", "Thông báo");
                             }
                             ketQua = (b % a);
-                            break;
-                        case "^":
-                            ketQua = Math.Pow(b, a);
                             break;
                     }
                     sh.Push(ketQua);
@@ -355,51 +343,7 @@ namespace Calculator
 
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.ShiftKey)
-                IsShiftKeyPress = true;
-            if (e.KeyCode == Keys.D0 && !IsShiftKeyPress || e.KeyCode == Keys.NumPad0)
-                button0_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
-                button1_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
-                button2_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
-                button3_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
-                button4_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
-                button5_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
-                button6_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
-                button7_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D8 && !IsShiftKeyPress || e.KeyCode == Keys.NumPad8)
-                button8_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.D9 && !IsShiftKeyPress || e.KeyCode == Keys.NumPad9)
-                button9_Click(textBox1, new EventArgs());
-
-            if (e.KeyCode == Keys.Back)
-                button17_Click(textBox1, new EventArgs());
-
-            if (e.KeyCode == Keys.Add || (IsShiftKeyPress && e.KeyCode == Keys.Oemplus))
-                button10_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.Subtract || e.KeyCode == Keys.OemMinus)
-                button11_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.Multiply || IsShiftKeyPress && e.KeyCode == Keys.D8)
-                button12_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.OemQuestion)
-                button13_Click(textBox1, new EventArgs());
-            if (e.KeyCode == Keys.OemPeriod)
-                buttom_Cham_Click(textBox1, new EventArgs());
-
-            if (IsShiftKeyPress && e.KeyCode == Keys.D9)
-                button_MoNg_Click(textBox1, new EventArgs());
-            if (IsShiftKeyPress && e.KeyCode == Keys.D0)
-                button_DongNG_Click(textBox1, new EventArgs());
-
-        }
+       
         bool IsShiftKeyPress = false;
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -415,64 +359,55 @@ namespace Calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+            
             ThemKiTu("1");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+           
             ThemKiTu("2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+            
             ThemKiTu("3");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+            
             ThemKiTu("4");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+           
             ThemKiTu("5");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+           
             ThemKiTu("6");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+            
             ThemKiTu("7");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+           
             ThemKiTu("8");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            //if ((textBox1.Text == "0"))
-            //    textBox1.Clear();
+            
             ThemKiTu("9");
         }
 
@@ -516,8 +451,7 @@ namespace Calculator
 
         private void button18_Click(object sender, EventArgs e)
         {
-            //textBox1.Text += '%';
-            //NhapLai = false;
+            
             ThemKiTu("%");
         }
         private void button_cl_Click(object sender, EventArgs e)
