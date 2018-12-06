@@ -156,7 +156,7 @@ namespace Calculator
                                 case "sin":
                                     sh.Push(Math.Sin(double.Parse(sh.Pop().ToString())));
                                     break;
-                                case "scos":
+                                case "cos":
                                     sh.Push(Math.Cos(double.Parse(sh.Pop().ToString())));
                                     break;
                                 case "tan":
@@ -166,10 +166,10 @@ namespace Calculator
                                     sh.Push(1/Math.Tan(double.Parse(sh.Pop().ToString())));
                                     break;
                                 case "ln":
-                                    sh.Push(Math.Log10(double.Parse(sh.Pop().ToString())));
+                                    sh.Push(Math.Log(double.Parse(sh.Pop().ToString())));
                                     break;
                                 case "log":
-                                    sh.Push(Math.Log(double.Parse(sh.Pop().ToString())));
+                                    sh.Push(Math.Log10(double.Parse(sh.Pop().ToString())));
                                     break;
                                 case "sqrt":
                                     sh.Push(Math.Sqrt(double.Parse(sh.Pop().ToString())));
@@ -341,14 +341,6 @@ namespace Calculator
             }
             textBox1.Text = sh.Pop().ToString();
 
-        }
-
-       
-        bool IsShiftKeyPress = false;
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            IsShiftKeyPress = false;
         }
 
 
